@@ -16,6 +16,6 @@ format:
     theme: lumen
     css: styles.css
     toc: true
-
+    self-contained: false
 editor: visual
 
