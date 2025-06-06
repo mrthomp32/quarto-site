@@ -1,0 +1,27 @@
+---
+title: "Teaching"
+format:
+    html: 
+      self-contained: true
+      grid: 
+        margin-width: 350px
+execute: 
+  echo: fenced
+reference-location: margin
+citation-location: margin
+---
+
+I have taught a wide variety of coursework in comparative politics and political methodology to graduate students and undergraduates.
+
+Most recently, I taught: 
+
+- "The Politics of China," 
+- "Chinese Foreign Policy," 
+- "Sources and Methods for the Study of Chinese Politics,"
+- "Chinese Bureaucratic Politics in Comparative Perspective" 
+
+to graduate students at the UC San Diego School of Global Policy and Strategy.
+
+
+
+

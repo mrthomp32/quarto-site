@@ -1,0 +1,14 @@
+{
+  "hash": "94e38350a4f26da8ad8f63d7fb1c5fbe",
+  "result": {
+    "markdown": "---\ntitle: \"Research\"\n---\n\n\nI am interested in the way ideas about management and oversight shape the institutions and practices of governance. My research focuses on politics of bureaucracy and personnel management in nondemocratic regimes, with a focus on China and martial-law Taiwan. In particular, I’m interested in how and why states build different institutions to manage bureaucrats, and how the differences in those institutions affect governance outcomes.\n\nMy dissertation, ‘Building a Supervision Science: Bureaucratic Control from Mao to Xi,’ analyzes the causes and consequences of shifts to different modes of bureaucratic control in China from 1949 to the present.  You can download the whole document here, although like all dissertations it’s a bit rough. \n\nThe project examines several institutions of internal accountability in Chinese politics over time—from structures of oversight and management to the 'sticks' of party and state discipline. By using archival material, I am able to open the ‘black box’ of these institutions and examine the politics of their operation directly. In doing so, I revise our understanding of how the party-state’s internal checks and balances have responded to different priorities over time. The dissertation is now the basis for my book project. \n\nIn other projects, I examine the politics of bureaucratic study teams during China’s reform era, the politics of personnel evaluation under martial law in Taiwan, and the politics and history of China’s public prosecutor. \n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

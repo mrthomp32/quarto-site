@@ -1,0 +1,59 @@
+
+## for guizhou newsitems
+
+#### helper functions 
+extract_author <- function(script_text) {
+  # Use regex to extract zz value in single or double quotes
+  match <- regmatches(script_text, regexpr("var zz\\s*=\\s*['\"](.*?)['\"]", script_text, perl = TRUE))
+  if (length(match) == 0) {
+    return(NA)  # nothing matched 
+    }
+  # Extract just the value of zz
+  zz_val <- sub("var zz\\s*=\\s*['\"](.*?)['\"]", "\\1", match)
+  # Determine the author based on whether zz is empty
+  if (zz_val != "") {
+    return(paste0("作者：", zz_val))
+  } else {
+    return("作者：贵州省司法厅")
+  }
+  }
+
+extract_source <- function(text_input){
+       match <- regmatches(text_input, regexpr("var wzly\\s*=\\s*'(.*?)'|var wzly\\s*\"(.*?)\"",text_input,perl=T))
+       if(length(match)==0){
+             return(NA)}
+       #extract value
+         wzly_val = sub("var wzly\\s*=\\s*['\"](.*?)['\"].*", "\\1", match)
+         #determine author
+           if(wzly_val != ""){
+                 return(paste0("来源: ",wzly_val))
+             } else {
+                   return("来源：贵州省司法厅")
+               }}
+
+extract_date <- function(text_input){
+  match <- regmatches(text_input, regexpr("var pubdata\\s*=\\s*'(.*?)'|var pubdata\\s*\"(.*?)\"",text_input,perl=T))
+  if(length(match)==0){
+    return(NA)}
+  #extract value
+  pubdata_val = sub("var pubdata\\s*=\\s*['\"](.*?)['\"].*", "\\1", match)
+  if(pubdata_val != ""){
+    return(paste0("日期: ",pubdata_val))
+  } else {
+    return(NA)}}
+
+## now the scraping 
+
+home <- read_html(newslink)
+toolbar_eles_text <- home %>% 
+  html_element(".toolbar") %>% 
+  html_elements("span") %>% 
+  html_elements("script[type='text/javascript']") %>% 
+  html_text2()
+
+out <- c(extract_date(toolbar_eles_text[1]),
+         extract_source(toolbar_eles_text[2]),
+         extract_author(toolbar_eles_text[3])
+         )
+
+

@@ -1,0 +1,31 @@
+{
+    "id": "11AD02DB",
+    "path": "~/Dropbox (Personal)/personal_website/quarto_base/research.qmd",
+    "project_path": "research.qmd",
+    "type": "quarto_markdown",
+    "hash": "2664207828",
+    "contents": "",
+    "dirty": false,
+    "created": 1749172760333.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "rmdVisualMode": "true",
+        "rmdVisualWrapConfigured": "true",
+        "source_window_id": "",
+        "Source": "Source",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "9876:4704.33349609375",
+        "cursorPosition": "55,0",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1749172984,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1749172984082,
+    "read_only": false,
+    "read_only_alternatives": []
+}
