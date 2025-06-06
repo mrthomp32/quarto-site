@@ -1,6 +1,7 @@
 project:
   type: website
   output-dir: docs
+
 website:
   title: "Michael Thompson-Brusstar"
   navbar:
@@ -16,6 +17,6 @@ format:
     theme: lumen
     css: styles.css
     toc: true
-    self-contained: false
-editor: visual
+    self-contained: true
 
+editor: visual
