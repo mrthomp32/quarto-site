@@ -1,8 +1,15 @@
 ---
 title: "bureaucratism"
 subtitle: "notes on bureaucracy and technocrocracy in the sinosphere and beyond"
-listing: true
 date: 2025-06-14
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  feed: true
 ---
 
 This is ‘bureaucratism,’ a blog about the history and politics of bureaucracy and technocracy, largely in China. 
+
+The title of the blog comes from a word long used as a shorthand for the myriad ills attributed to excessive concentration of power in the hands of bureaucrats in China, the Soviet Union, and elsewhere. In China, this is called **guanliao zhuyi** (官僚主义). 
