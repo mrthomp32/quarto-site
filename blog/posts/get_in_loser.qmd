@@ -1,6 +1,7 @@
 ---
 title: "Get in loser, we're doing blogs now."
 date: 2025-06-13
+image: images/guan_zi.png
 categories: 
   - introduction
 ---
