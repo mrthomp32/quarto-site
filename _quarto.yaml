@@ -11,6 +11,11 @@ website:
       - research.qmd
       - teaching.qmd
       - data.qmd
+      - href: blog/index.qmd
+        text: Blog
+
+metadata-files:
+  - blog/_metadata.yml
 
 format:
   html:
