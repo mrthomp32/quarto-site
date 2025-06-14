@@ -1,6 +1,5 @@
 ---
 title: "bureaucratism"
-subtitle: "notes on bureaucracy and technocrocracy in the sinosphere and beyond"
 date: 2025-06-14
 listing:
   contents: posts

@@ -4,6 +4,7 @@ project:
 
 website:
   title: "Michael Thompson-Brusstar"
+  site-url: "https://mthompsonbrusstar.com"
   navbar:
     left:
       - href: index.qmd
@@ -13,7 +14,7 @@ website:
       - data.qmd
       - href: blog/index.qmd
         text: Blog
-
+  
 metadata-files:
   - blog/_metadata.yml
 

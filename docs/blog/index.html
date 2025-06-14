@@ -4066,9 +4066,9 @@ vertical-align: -.125em;
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -4227,7 +4227,7 @@ window.Quarto = {
 </script>
 
 <style type="text/css"></style>
-</head>
+<link rel="alternate" type="application/rss+xml" title="Michael Thompson-Brusstar" href="index.xml" data-external="1"></head>
 
 <body class="nav-fixed quarto-light">
 
@@ -4277,16 +4277,15 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    </div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category>All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aW50cm9kdWN0aW9u">introduction <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">bureaucratism</h1>
-<p class="subtitle lead">notes on bureaucracy and technocrocracy in the sinosphere and beyond</p>
 </div>
 
 <div>
@@ -4315,28 +4314,34 @@ window.Quarto = {
 
 
 <p>This is ‘bureaucratism,’ a blog about the history and politics of bureaucracy and technocracy, largely in China.</p>
+<p>The title of the blog comes from a word long used as a shorthand for the myriad ills attributed to excessive concentration of power in the hands of bureaucrats in China, the Soviet Union, and elsewhere. In China, this is called <strong>guanliao zhuyi</strong> (官僚主义).</p>
 
 
 
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="aW50cm9kdWN0aW9u" data-listing-date-sort="1749798000000" data-listing-file-modified-sort="1749933958903" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="247">
-<div class="thumbnail"><a href="../blog/get_in_loser.html" class="no-external">
+<div class="quarto-post image-right" data-index="0" data-categories="aW50cm9kdWN0aW9u" data-listing-date-sort="1749798000000" data-listing-file-modified-sort="1749935664021" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="371">
+<div class="thumbnail"><a href="../blog/posts/get_in_loser.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../blog/get_in_loser.html" class="no-external">Get in loser, we’re doing blogs now.</a>
+<a href="../blog/posts/get_in_loser.html" class="no-external">Get in loser, we’re doing blogs now.</a>
 </h3>
-<div class="delink listing-description"><a href="../blog/get_in_loser.html" class="no-external">
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory(&#39;aW50cm9kdWN0aW9u&#39;); return false;">introduction</div>
+
+</div>
+<div class="delink listing-description"><a href="../blog/posts/get_in_loser.html" class="no-external">
 <p>notes on bureaucracy and technocrocracy in the sinosphere and beyond</p>
 </a></div>
 </div>
 <div class="metadata">
-<a href="../blog/get_in_loser.html" class="no-external">
+<a href="../blog/posts/get_in_loser.html" class="no-external">
 <div class="listing-date">
 June 13, 2025
 </div>
@@ -4418,7 +4423,7 @@ June 13, 2025
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/mthompsonbrusstar\.com");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
