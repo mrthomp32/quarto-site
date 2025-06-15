@@ -17,6 +17,9 @@ I hope that this resource will be useful anyone interested in the changes in Chi
 
 Below you should be able to explore the data in an interactive way. If it's not working or displaying correctly, please check the [shiny app](https://mthompsonbrusstar.shinyapps.io/zuzhirenshi/).
 
+
+
+
 ```{r, echo=FALSE}
 #| warning: false
 #| message: false
@@ -44,6 +47,8 @@ shared_data <- SharedData$new(data)
 ## 📅 Filter Controls
 
 ```{r, echo = F}
+#| warning: false
+#| message: false
 filter_slider("date", "Date Range", shared_data, ~date_start)
 filter_checkbox("type", "Event Category", shared_data, ~category)
 ```
@@ -51,6 +56,8 @@ filter_checkbox("type", "Event Category", shared_data, ~category)
 ## 📊 Event Histogram
 
 ```{r, echo = F}
+#| warning: false
+#| message: false
 plot_ly(shared_data, x = ~date_start, type = "histogram", color = ~category) %>%
   layout(bargap = 0.1,
          xaxis = list(title = "Year"),
@@ -60,6 +67,8 @@ plot_ly(shared_data, x = ~date_start, type = "histogram", color = ~category) %>%
 ## 📋 Event Table
 
 ```{r, echo = F}
+#| warning: false
+#| message: false
 reactable(shared_data, columns = list(
   date_start = colDef(name = "Start"),
   date_end = colDef(name = "End"),

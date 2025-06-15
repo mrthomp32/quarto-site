@@ -116,28 +116,28 @@
     "href": "timeline.html#explore-the-data",
     "title": "Chinese Personnel and Organization Work Timeline (组织人事工作大事记)",
     "section": "Explore the data!",
-    "text": "Explore the data!\nBelow you should be able to explore the data in an interactive way. If it’s not working or displaying correctly, please check the shiny app.\n\nlibrary(tidyverse)\nlibrary(readr)\nlibrary(crosstalk)\nlibrary(plotly)\nlibrary(reactable)\n\n# Load and clean data\ndata &lt;- read_csv(\"组织人事工作大事记1978-1997.csv\") %&gt;%\n  rename(\n    event_zh = events,\n    event_en = translated_text,\n    category = type,\n    date_start = start_date,\n    date_end = end_date\n  )\n\n# Wrap in SharedData for linking filters and widgets\nshared_data &lt;- SharedData$new(data)"
+    "text": "Explore the data!\nBelow you should be able to explore the data in an interactive way. If it’s not working or displaying correctly, please check the shiny app."
   },
   {
     "objectID": "timeline.html#filter-controls",
     "href": "timeline.html#filter-controls",
     "title": "Chinese Personnel and Organization Work Timeline (组织人事工作大事记)",
     "section": "📅 Filter Controls",
-    "text": "📅 Filter Controls\n\nfilter_slider(\"date\", \"Date Range\", shared_data, ~date_start)\n\n\nDate Range\n\n\n\n\nfilter_checkbox(\"type\", \"Event Category\", shared_data, ~category)\n\n\nEvent Category\n\n\n\n\n人事工作\n\n\n\n\n\n组织工作"
+    "text": "📅 Filter Controls\n\n\n\nDate Range\n\n\n\n\n\n\nEvent Category\n\n\n\n\n人事工作\n\n\n\n\n\n组织工作"
   },
   {
     "objectID": "timeline.html#event-histogram",
     "href": "timeline.html#event-histogram",
     "title": "Chinese Personnel and Organization Work Timeline (组织人事工作大事记)",
     "section": "📊 Event Histogram",
-    "text": "📊 Event Histogram\n\nplot_ly(shared_data, x = ~date_start, type = \"histogram\", color = ~category) %&gt;%\n  layout(bargap = 0.1,\n         xaxis = list(title = \"Year\"),\n         yaxis = list(title = \"Event Count\"))\n\nWarning in RColorBrewer::brewer.pal(N, \"Set2\"): minimal value for n is 3, returning requested palette with 3 different levels\nWarning in RColorBrewer::brewer.pal(N, \"Set2\"): minimal value for n is 3, returning requested palette with 3 different levels"
+    "text": "📊 Event Histogram"
   },
   {
     "objectID": "timeline.html#event-table",
     "href": "timeline.html#event-table",
     "title": "Chinese Personnel and Organization Work Timeline (组织人事工作大事记)",
     "section": "📋 Event Table",
-    "text": "📋 Event Table\n\nreactable(shared_data, columns = list(\n  date_start = colDef(name = \"Start\"),\n  date_end = colDef(name = \"End\"),\n  category = colDef(name = \"Category\"),\n  event_zh = colDef(name = \"Event\")\n))"
+    "text": "📋 Event Table"
   },
   {
     "objectID": "timeline.html#footnotes",
