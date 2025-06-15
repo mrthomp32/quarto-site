@@ -32,12 +32,13 @@ library(reactable)
 library(htmltools)
 
 data <- read_csv("组织人事工作大事记1978-1997.csv") %>%
-  select(type,start_date,end_date,translated_text) %>%
+  select(type,start_date,translated_text) %>%
+  mutate(category = case_when(type == "人事工作" ~ "Personnel Work",
+                              type == "组织工作" ~ "Org. Work")) %>%
+  select(-type) %>%
   rename(
     event_en = translated_text,
-    category = type,
-    date_start = start_date,
-    date_end = end_date
+    date_start = start_date
   )
 
 shared_data <- SharedData$new(data)
@@ -73,7 +74,6 @@ reactable(
   shared_data,
   columns = list(
     date_start = colDef(name = "Start Date"),
-    date_end = colDef(show = FALSE),
     category = colDef(name = "Category"),
     event_en = colDef(name = "Event")
   )
