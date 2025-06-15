@@ -1,0 +1,69 @@
+---
+title: "Chinese Personnel and Organization Work Timeline (组织人事工作大事记)"
+format: html
+---
+
+## What this is: 
+
+Below, you will find an interactive visualization / explorer for personnel and organization work in the Chinese Reform Era (1978-1997). In total, there are about 2700 organization work entries and 170 personnel work entries. 
+
+I compiled these entries from three sources I collected, scanned, OCR'd, and manually corrected: first, three timelines of significant events from the Research Office of the Central Organization Department: one covering 1978-1988, another covering 1989-1992, and a third covering 1993-1997. These were dedicated publications that cover not just relevant meetings, speeches, the release of relevant reports, and some statistics, but also the appointments and removals of significant figures. To these, I also added a less-exhaustive set of "personnel work" events from Xu and Sun's 2009 book, "Reform of China's Personnel Institutions, 1978-2008" (for the overlapping years).^[中共中央组织部研究室《党的组织工作大事记》(1978-1988,1989-1992,1993-1997); 徐颂陶 & 孙建立,《中国人事制度改革（1978-2008）》.]
+
+As you explore, please do note that the format of the entries changes over time; while some entries were possible to separate, other entries list *multiple discrete events* that took place on the same day.^[I'd suggest making good use of the search function on the Shiny app to ensure you don't miss things, and of course the Chinese version here is the authoritative version.]
+
+I hope that this resource will be useful anyone interested in the changes in Chinese history, the study of institutional reform, organization work, or personnel appointments in China for this period. 
+
+## Explore the data! 
+
+Below you should be able to explore the data in an interactive way. If it's not working or displaying correctly, please check the [shiny app](https://mthompsonbrusstar.shinyapps.io/zuzhirenshi/).
+
+```{r}
+#| warning: false
+#| message: false
+
+library(tidyverse)
+library(readr)
+library(crosstalk)
+library(plotly)
+library(reactable)
+
+# Load and clean data
+data <- read_csv("组织人事工作大事记1978-1997.csv") %>%
+  rename(
+    event_zh = events,
+    event_en = translated_text,
+    category = type,
+    date_start = start_date,
+    date_end = end_date
+  )
+
+# Wrap in SharedData for linking filters and widgets
+shared_data <- SharedData$new(data)
+```
+
+## 📅 Filter Controls
+
+```{r}
+filter_slider("date", "Date Range", shared_data, ~date_start)
+filter_checkbox("type", "Event Category", shared_data, ~category)
+```
+
+## 📊 Event Histogram
+
+```{r}
+plot_ly(shared_data, x = ~date_start, type = "histogram", color = ~category) %>%
+  layout(bargap = 0.1,
+         xaxis = list(title = "Year"),
+         yaxis = list(title = "Event Count"))
+```
+
+## 📋 Event Table
+
+```{r}
+reactable(shared_data, columns = list(
+  date_start = colDef(name = "Start"),
+  date_end = colDef(name = "End"),
+  category = colDef(name = "Category"),
+  event_zh = colDef(name = "Event")
+))
+```

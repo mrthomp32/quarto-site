@@ -14,7 +14,7 @@ website:
       - data.qmd
       - href: blog/index.qmd
         text: Blog
-      - href: shiny.qmd
+      - href: timeline.qmd
         text: Org. Work Viewer
   
 metadata-files:

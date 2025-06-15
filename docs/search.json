@@ -7,46 +7,32 @@
     "text": "I have collected (and make freely available to other researchers) a large variety of data on both historical and contemporary Chinese political and legal affairs. I have focused on trying to collect and clean continuous runs of newspapers, publications, and other temporally-granular sources for understanding the changing political and social landscape.\nMy work on Taiwan primarily relies on publicly-available but redistribution-restricted archival material that I can’t freely redistribute here.\nFor any researchers curious about the data collection process, I’m always happy to chat about building corpora– please feel free to reach out.\n\nMao Era China\nFrom a variety of research libraries in Hong Kong, Taipei, and across the United States (which contain considerably more than you may think on the period), I have collected and digitized a variety of Mao-era periodicals focused on legal and political-legal questions. These formed an important source base for my dissertation and my published work on the history of the Chinese public prosecutor,1 and I continue to use them for my book project.\n1 These projects include, for example, “Supreme Supervisors? Building the People’s Procuracy, 1949–1961”.\n\nReform Era China\nI have recently begun a large-scale digitization project on personnel management publications from the reform era (partially with James Gethyn Evans), focusing on the cases of three magazines: “Personnel”, “Organization and Personnel Research”, and “China Organization.”2\n\n\n2 《人事》,《组织人事学研究》, and 《中国机构与编制》, respectively."
   },
   {
-    "objectID": "blog/posts/get_in_loser.html",
-    "href": "blog/posts/get_in_loser.html",
-    "title": "Get in loser, we’re doing blogs now.",
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "bureaucratism",
     "section": "",
-    "text": "I’ll keep this quick.\nWhy a blog? Because blogs are good, and I love reading them. It’s good to read people in medium- and long-form. A good thing about the internet is just letting nerds cook.\nPlus, writing is thinking, and it only seems to get harder for me these days. From where I sit, it seems like the only alternative to doing real work right now1 is posting on social media and, well, no thanks. Further, while I like the idea of other people finding and reading my work, this blog is mostly for me.\nHistorically, if I have wanted to figure something out, I have tried to write about it. Blogs are uniquely suited to the “X, what’s up with that?” type questions that have always been most interesting to me. “What’s up with that?” isn’t really a question of interest to my professional field, so I don’t do much writing of this kind now that I’ve left graduate school. Although I make no claims to any particular talent, I am very persistent, and I do sometimes make some progress in understanding something that is happening now, or that happened 50 years ago, or that might happen in the future. However, I rarely do anything with that stuff other than dump it into an Obsidian note. That seems like a waste. I could be making the internet weirder and more fun by putting them online.\nIn that spirit, my first hope is that I’ll stick with this “noodling” for my own sake. In the spirit of noodling, things might be a bit half-baked. Many things won’t make it beyond a blog-post. But hopefully what I produce will still be more fun and more productive than what I currently do with my spare time (read: doom-scrolling).\nSince I sometimes learn something that is worth explaining to someone other than myself, I also hope to write things those things here too. For now, I’ll aim to post something about why I think the study of bureaucracy is interesting and important, and then by producing a little digest of what I’ve been reading as I work."
+    "text": "This is ‘bureaucratism,’ a blog about the history and politics of bureaucracy and technocracy, largely in China.\nThe title of the blog comes from a word long used as a shorthand for the myriad ills of bureaucracy in China and the Soviet Union (the Chinese is 官僚主义). I hope the weird political history of this term and its dynamic use over time make it a great title for the blog.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGet in loser, we’re doing blogs now.\n\n\n\nintroduction\n\n\n\nnotes on bureaucracy and technocrocracy in the sinosphere and beyond\n\n\n\n\n\nJune 13, 2025\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "blog/posts/get_in_loser.html#footnotes",
-    "href": "blog/posts/get_in_loser.html#footnotes",
-    "title": "Get in loser, we’re doing blogs now.",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nI could get a real hobby, I guess, but I have come this far without one…↩︎"
-  },
-  {
-    "objectID": "shiny.html",
-    "href": "shiny.html",
-    "title": "Personnel and Organization Work Timeline (组织人事工作大事记)",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Michael Thompson-Brusstar",
     "section": "",
-    "text": "Below, you will find an interactive visualization / explorer for personnel and organization work in the Chinese Reform Era (1978-1997). In total, there are about 2700 organization work entries and 170 personnel work entries.\nI compiled these entries from three sources I collected, scanned, OCR’d, and manually corrected: first, three timelines of significant events from the Research Office of the Central Organization Department: one covering 1978-1988, another covering 1989-1992, and a third covering 1993-1997. These were dedicated publications that cover not just relevant meetings, speeches, the release of relevant reports, and some statistics, but also the appointments and removals of significant figures. To these, I also added a less-exhaustive set of “personnel work” events from Xu and Sun’s 2009 book, “Reform of China’s Personnel Institutions, 1978-2008” (for the overlapping years).1\nAs you explore, please do note that the format of the entries changes over time; while some entries were possible to separate, other entries list multiple discrete events that took place on the same day. I’d suggest making good use of the search function to ensure you don’t miss things.\nI hope that this resource will be useful anyone interested in the changes in Chinese history, the study of institutional reform, organization work, or personnel appointments in China for this period."
+    "text": "I am Assistant Professor of Political Science at Trinity College in Hartford, Connecticut. I teach courses on Chinese politics, the political economy of development, and research methods in social science.\n\n\n\n\n\nMe, smiling the smile only successfully defending your dissertation can bring.\n\n\nI received my Ph.D. in Political Science at the University of Michigan, where I also received an MA in Chinese Studies. From 2023 to 2025, I served as a Postdoctoral Scholar at the UC San Diego School of Global Policy and Strategy’s 21st Century China Center.\nWhen I am not on campus, I can be found walking my rescued racing greyhound, writing blog posts I will never publish, and hunting for rare1 books.\n1 If you ever suffer the misfortune of hearing about my book collection, you will quickly discover the difference between ‘rare’ and ‘valuable.’"
   },
   {
-    "objectID": "shiny.html#what-this-is",
-    "href": "shiny.html#what-this-is",
-    "title": "Personnel and Organization Work Timeline (组织人事工作大事记)",
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "Michael Thompson-Brusstar",
     "section": "",
-    "text": "Below, you will find an interactive visualization / explorer for personnel and organization work in the Chinese Reform Era (1978-1997). In total, there are about 2700 organization work entries and 170 personnel work entries.\nI compiled these entries from three sources I collected, scanned, OCR’d, and manually corrected: first, three timelines of significant events from the Research Office of the Central Organization Department: one covering 1978-1988, another covering 1989-1992, and a third covering 1993-1997. These were dedicated publications that cover not just relevant meetings, speeches, the release of relevant reports, and some statistics, but also the appointments and removals of significant figures. To these, I also added a less-exhaustive set of “personnel work” events from Xu and Sun’s 2009 book, “Reform of China’s Personnel Institutions, 1978-2008” (for the overlapping years).1\nAs you explore, please do note that the format of the entries changes over time; while some entries were possible to separate, other entries list multiple discrete events that took place on the same day. I’d suggest making good use of the search function to ensure you don’t miss things.\nI hope that this resource will be useful anyone interested in the changes in Chinese history, the study of institutional reform, organization work, or personnel appointments in China for this period."
+    "text": "I am Assistant Professor of Political Science at Trinity College in Hartford, Connecticut. I teach courses on Chinese politics, the political economy of development, and research methods in social science.\n\n\n\n\n\nMe, smiling the smile only successfully defending your dissertation can bring.\n\n\nI received my Ph.D. in Political Science at the University of Michigan, where I also received an MA in Chinese Studies. From 2023 to 2025, I served as a Postdoctoral Scholar at the UC San Diego School of Global Policy and Strategy’s 21st Century China Center.\nWhen I am not on campus, I can be found walking my rescued racing greyhound, writing blog posts I will never publish, and hunting for rare1 books.\n1 If you ever suffer the misfortune of hearing about my book collection, you will quickly discover the difference between ‘rare’ and ‘valuable.’"
   },
   {
-    "objectID": "shiny.html#explore-the-data",
-    "href": "shiny.html#explore-the-data",
-    "title": "Personnel and Organization Work Timeline (组织人事工作大事记)",
-    "section": "Explore the data!",
-    "text": "Explore the data!\nBelow, I’ve embedded a viewer for the Shiny app. If it’s not displaying correctly, please check the original."
-  },
-  {
-    "objectID": "shiny.html#footnotes",
-    "href": "shiny.html#footnotes",
-    "title": "Personnel and Organization Work Timeline (组织人事工作大事记)",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\n中共中央组织部研究室《党的组织工作大事记》(1978-1988,1989-1992,1993-1997); 徐颂陶 & 孙建立,《中国人事制度改革（1978-2008）》.↩︎"
+    "objectID": "index.html#about-my-work",
+    "href": "index.html#about-my-work",
+    "title": "Michael Thompson-Brusstar",
+    "section": "About my work",
+    "text": "About my work\nGenerally, my research focuses on bureaucracy and the evolution of administrative-legal institutions. I also have methodological interests in the analysis of text and in mixed-methods social science. Empirically, I am interested in the cases of China under the Communist Party of China and martial-law era Taiwan.\nYou can read more specifics about my research and teaching by clicking the tabs above."
   },
   {
     "objectID": "teaching.html",
@@ -98,31 +84,66 @@
     "text": "Other writing:\n\nContributor, “Xi Won’t Go,” ChinaFile, February 25, 2018."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Michael Thompson-Brusstar",
+    "objectID": "blog/posts/get_in_loser.html",
+    "href": "blog/posts/get_in_loser.html",
+    "title": "Get in loser, we’re doing blogs now.",
     "section": "",
-    "text": "I am Assistant Professor of Political Science at Trinity College in Hartford, Connecticut. I teach courses on Chinese politics, the political economy of development, and research methods in social science.\n\n\n\n\n\nMe, smiling the smile only successfully defending your dissertation can bring.\n\n\nI received my Ph.D. in Political Science at the University of Michigan, where I also received an MA in Chinese Studies. From 2023 to 2025, I served as a Postdoctoral Scholar at the UC San Diego School of Global Policy and Strategy’s 21st Century China Center.\nWhen I am not on campus, I can be found walking my rescued racing greyhound, writing blog posts I will never publish, and hunting for rare1 books.\n1 If you ever suffer the misfortune of hearing about my book collection, you will quickly discover the difference between ‘rare’ and ‘valuable.’"
+    "text": "I’ll keep this quick.\nWhy a blog? Because blogs are good, and I love reading them. It’s good to read people in medium- and long-form. A good thing about the internet is just letting nerds cook.\nPlus, writing is thinking, and it only seems to get harder for me these days. From where I sit, it seems like the only alternative to doing real work right now1 is posting on social media and, well, no thanks. Further, while I like the idea of other people finding and reading my work, this blog is mostly for me.\nHistorically, if I have wanted to figure something out, I have tried to write about it. Blogs are uniquely suited to the “X, what’s up with that?” type questions that have always been most interesting to me. “What’s up with that?” isn’t really a question of interest to my professional field, so I don’t do much writing of this kind now that I’ve left graduate school. Although I make no claims to any particular talent, I am very persistent, and I do sometimes make some progress in understanding something that is happening now, or that happened 50 years ago, or that might happen in the future. However, I rarely do anything with that stuff other than dump it into an Obsidian note. That seems like a waste. I could be making the internet weirder and more fun by putting them online.\nIn that spirit, my first hope is that I’ll stick with this “noodling” for my own sake. In the spirit of noodling, things might be a bit half-baked. Many things won’t make it beyond a blog-post. But hopefully what I produce will still be more fun and more productive than what I currently do with my spare time (read: doom-scrolling).\nSince I sometimes learn something that is worth explaining to someone other than myself, I also hope to write things those things here too. For now, I’ll aim to post something about why I think the study of bureaucracy is interesting and important, and then by producing a little digest of what I’ve been reading as I work."
   },
   {
-    "objectID": "index.html#about-me",
-    "href": "index.html#about-me",
-    "title": "Michael Thompson-Brusstar",
-    "section": "",
-    "text": "I am Assistant Professor of Political Science at Trinity College in Hartford, Connecticut. I teach courses on Chinese politics, the political economy of development, and research methods in social science.\n\n\n\n\n\nMe, smiling the smile only successfully defending your dissertation can bring.\n\n\nI received my Ph.D. in Political Science at the University of Michigan, where I also received an MA in Chinese Studies. From 2023 to 2025, I served as a Postdoctoral Scholar at the UC San Diego School of Global Policy and Strategy’s 21st Century China Center.\nWhen I am not on campus, I can be found walking my rescued racing greyhound, writing blog posts I will never publish, and hunting for rare1 books.\n1 If you ever suffer the misfortune of hearing about my book collection, you will quickly discover the difference between ‘rare’ and ‘valuable.’"
+    "objectID": "blog/posts/get_in_loser.html#footnotes",
+    "href": "blog/posts/get_in_loser.html#footnotes",
+    "title": "Get in loser, we’re doing blogs now.",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nI could get a real hobby, I guess, but I have come this far without one…↩︎"
   },
   {
-    "objectID": "index.html#about-my-work",
-    "href": "index.html#about-my-work",
-    "title": "Michael Thompson-Brusstar",
-    "section": "About my work",
-    "text": "About my work\nGenerally, my research focuses on bureaucracy and the evolution of administrative-legal institutions. I also have methodological interests in the analysis of text and in mixed-methods social science. Empirically, I am interested in the cases of China under the Communist Party of China and martial-law era Taiwan.\nYou can read more specifics about my research and teaching by clicking the tabs above."
+    "objectID": "timeline.html",
+    "href": "timeline.html",
+    "title": "Chinese Personnel and Organization Work Timeline (组织人事工作大事记)",
+    "section": "",
+    "text": "Below, you will find an interactive visualization / explorer for personnel and organization work in the Chinese Reform Era (1978-1997). In total, there are about 2700 organization work entries and 170 personnel work entries.\nI compiled these entries from three sources I collected, scanned, OCR’d, and manually corrected: first, three timelines of significant events from the Research Office of the Central Organization Department: one covering 1978-1988, another covering 1989-1992, and a third covering 1993-1997. These were dedicated publications that cover not just relevant meetings, speeches, the release of relevant reports, and some statistics, but also the appointments and removals of significant figures. To these, I also added a less-exhaustive set of “personnel work” events from Xu and Sun’s 2009 book, “Reform of China’s Personnel Institutions, 1978-2008” (for the overlapping years).1\nAs you explore, please do note that the format of the entries changes over time; while some entries were possible to separate, other entries list multiple discrete events that took place on the same day.2\nI hope that this resource will be useful anyone interested in the changes in Chinese history, the study of institutional reform, organization work, or personnel appointments in China for this period."
   },
   {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "bureaucratism",
+    "objectID": "timeline.html#what-this-is",
+    "href": "timeline.html#what-this-is",
+    "title": "Chinese Personnel and Organization Work Timeline (组织人事工作大事记)",
     "section": "",
-    "text": "This is ‘bureaucratism,’ a blog about the history and politics of bureaucracy and technocracy, largely in China.\nThe title of the blog comes from a word long used as a shorthand for the myriad ills of bureaucracy in China and the Soviet Union (the Chinese is 官僚主义). I hope the weird political history of this term and its dynamic use over time make it a great title for the blog.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGet in loser, we’re doing blogs now.\n\n\n\nintroduction\n\n\n\nnotes on bureaucracy and technocrocracy in the sinosphere and beyond\n\n\n\n\n\nJune 13, 2025\n\n\n\n\n\nNo matching items"
+    "text": "Below, you will find an interactive visualization / explorer for personnel and organization work in the Chinese Reform Era (1978-1997). In total, there are about 2700 organization work entries and 170 personnel work entries.\nI compiled these entries from three sources I collected, scanned, OCR’d, and manually corrected: first, three timelines of significant events from the Research Office of the Central Organization Department: one covering 1978-1988, another covering 1989-1992, and a third covering 1993-1997. These were dedicated publications that cover not just relevant meetings, speeches, the release of relevant reports, and some statistics, but also the appointments and removals of significant figures. To these, I also added a less-exhaustive set of “personnel work” events from Xu and Sun’s 2009 book, “Reform of China’s Personnel Institutions, 1978-2008” (for the overlapping years).1\nAs you explore, please do note that the format of the entries changes over time; while some entries were possible to separate, other entries list multiple discrete events that took place on the same day.2\nI hope that this resource will be useful anyone interested in the changes in Chinese history, the study of institutional reform, organization work, or personnel appointments in China for this period."
+  },
+  {
+    "objectID": "timeline.html#explore-the-data",
+    "href": "timeline.html#explore-the-data",
+    "title": "Chinese Personnel and Organization Work Timeline (组织人事工作大事记)",
+    "section": "Explore the data!",
+    "text": "Explore the data!\nBelow you should be able to explore the data in an interactive way. If it’s not working or displaying correctly, please check the shiny app.\n\nlibrary(tidyverse)\nlibrary(readr)\nlibrary(crosstalk)\nlibrary(plotly)\nlibrary(reactable)\n\n# Load and clean data\ndata &lt;- read_csv(\"组织人事工作大事记1978-1997.csv\") %&gt;%\n  rename(\n    event_zh = events,\n    event_en = translated_text,\n    category = type,\n    date_start = start_date,\n    date_end = end_date\n  )\n\n# Wrap in SharedData for linking filters and widgets\nshared_data &lt;- SharedData$new(data)"
+  },
+  {
+    "objectID": "timeline.html#filter-controls",
+    "href": "timeline.html#filter-controls",
+    "title": "Chinese Personnel and Organization Work Timeline (组织人事工作大事记)",
+    "section": "📅 Filter Controls",
+    "text": "📅 Filter Controls\n\nfilter_slider(\"date\", \"Date Range\", shared_data, ~date_start)\n\n\nDate Range\n\n\n\n\nfilter_checkbox(\"type\", \"Event Category\", shared_data, ~category)\n\n\nEvent Category\n\n\n\n\n人事工作\n\n\n\n\n\n组织工作"
+  },
+  {
+    "objectID": "timeline.html#event-histogram",
+    "href": "timeline.html#event-histogram",
+    "title": "Chinese Personnel and Organization Work Timeline (组织人事工作大事记)",
+    "section": "📊 Event Histogram",
+    "text": "📊 Event Histogram\n\nplot_ly(shared_data, x = ~date_start, type = \"histogram\", color = ~category) %&gt;%\n  layout(bargap = 0.1,\n         xaxis = list(title = \"Year\"),\n         yaxis = list(title = \"Event Count\"))\n\nWarning in RColorBrewer::brewer.pal(N, \"Set2\"): minimal value for n is 3, returning requested palette with 3 different levels\nWarning in RColorBrewer::brewer.pal(N, \"Set2\"): minimal value for n is 3, returning requested palette with 3 different levels"
+  },
+  {
+    "objectID": "timeline.html#event-table",
+    "href": "timeline.html#event-table",
+    "title": "Chinese Personnel and Organization Work Timeline (组织人事工作大事记)",
+    "section": "📋 Event Table",
+    "text": "📋 Event Table\n\nreactable(shared_data, columns = list(\n  date_start = colDef(name = \"Start\"),\n  date_end = colDef(name = \"End\"),\n  category = colDef(name = \"Category\"),\n  event_zh = colDef(name = \"Event\")\n))"
+  },
+  {
+    "objectID": "timeline.html#footnotes",
+    "href": "timeline.html#footnotes",
+    "title": "Chinese Personnel and Organization Work Timeline (组织人事工作大事记)",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\n中共中央组织部研究室《党的组织工作大事记》(1978-1988,1989-1992,1993-1997); 徐颂陶 & 孙建立,《中国人事制度改革（1978-2008）》.↩︎\nI’d suggest making good use of the search function on the Shiny app to ensure you don’t miss things, and of course the Chinese version here is the authoritative version.↩︎"
   }
 ]
