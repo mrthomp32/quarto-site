@@ -14,6 +14,8 @@ website:
       - data.qmd
       - href: blog/index.qmd
         text: Blog
+      - href: shiny.qmd
+        text: Org. Work Viewer
   
 metadata-files:
   - blog/_metadata.yml

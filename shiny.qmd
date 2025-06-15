@@ -1,0 +1,24 @@
+---
+title: "Personnel and Organization Work Timeline (组织人事工作大事记)"
+format: html
+---
+
+## What this is: 
+
+Below, you will find an interactive visualization / explorer for personnel and organization work in the Chinese Reform Era (1978-1997). In total, there are about 2700 organization work entries and 170 personnel work entries. 
+
+I compiled these entries from three sources I collected, scanned, OCR'd, and manually corrected: first, three timelines of significant events from the Research Office of the Central Organization Department: one covering 1978-1988, another covering 1989-1992, and a third covering 1993-1997. These were dedicated publications that cover not just relevant meetings, speeches, the release of relevant reports, and some statistics, but also the appointments and removals of significant figures. To these, I also added a less-exhaustive set of "personnel work" events from Xu and Sun's 2009 book, "Reform of China's Personnel Institutions, 1978-2008" (for the overlapping years).^[中共中央组织部研究室《党的组织工作大事记》(1978-1988,1989-1992,1993-1997); 徐颂陶 & 孙建立,《中国人事制度改革（1978-2008）》.]
+
+As you explore, please do note that the format of the entries changes over time; while some entries were possible to separate, other entries list *multiple discrete events* that took place on the same day. I'd suggest making good use of the search function to ensure you don't miss things.
+
+I hope that this resource will be useful anyone interested in the changes in Chinese history, the study of institutional reform, organization work, or personnel appointments in China for this period. 
+
+## Explore the data! 
+
+Below, I've embedded a viewer for the Shiny app. If it's not displaying correctly, please check the [original](https://mthompsonbrusstar.shinyapps.io/zuzhirenshi/).
+
+
+<iframe src="https://mthompsonbrusstar.shinyapps.io/zuzhirenshi/"
+        width="100%" height="800" frameborder="0"
+        style="border:1px solid #ccc; border-radius:8px;">
+</iframe>
