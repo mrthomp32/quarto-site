@@ -32,6 +32,7 @@ library(reactable)
 library(htmltools)
 
 data <- read_csv("组织人事工作大事记1978-1997.csv") %>%
+  select(type,start_date,end_date,translated_text) %>%
   rename(
     event_en = translated_text,
     category = type,
@@ -67,13 +68,12 @@ plot_ly(shared_data, x = ~date_start, type = "histogram", color = ~category) %>%
 ```{r, echo = F}
 #| warning: false
 #| message: false
-filtered_data <- data[, c("date_start", "category", "event_en")]
-shared_data <- SharedData$new(filtered_data)
 
 reactable(
   shared_data,
   columns = list(
     date_start = colDef(name = "Start Date"),
+    date_end = colDef(show = FALSE),
     category = colDef(name = "Category"),
     event_en = colDef(name = "Event")
   )
