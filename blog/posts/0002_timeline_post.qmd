@@ -11,6 +11,7 @@ execute:
 reference-location: margin
 citation-location: margin
 date: 2025-06-19
+image: images/cover.jpg
 categories:
   - personnel work
   - organization work 
