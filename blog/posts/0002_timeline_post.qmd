@@ -1,0 +1,87 @@
+---
+title: "A Chronicle of Chinese Organization and Personnel Work"
+subtitle: "a tool for me, and maybe ... you?"
+format:
+    html: 
+      self-contained: true
+      grid: 
+        margin-width: 350px
+execute: 
+  echo: fenced
+reference-location: margin
+citation-location: margin
+date: 2025-06-19
+categories:
+  - personnel work
+  - organization work 
+  - tooling
+---
+
+## Getting started
+
+As long-time followers of the blog know,^[The jokes will not get better.] I am very interested in the ways that the management of people by the Chinese party-state have changed over time. The management of people is obviously important in a planned economy, but it's also important for understanding how (or if!) decisions in one place become policies and real forces in people's lives somewhere far away. So understanding how state try to create certain behavioral patterns in the people who work for them is important on its own terms. Lastly, I think studying arguments about *management* tell us interesting and important things about how political elites think governments *should* work. And that is in turn important for understanding political coalitions, administrative reforms, and policy-making.
+
+Doing research on the changing ways the Chinese state managed people over time requires diving into the untidy-tangle of organizations, committees, commissions, and other institutions that manage personnel evaluations, responsibility-title mapping, the allocation of position budgets,^[There continues to be no good way to describe 编制 succinctly in English. Bureaucratic ... allotments?] performance audits, promotions, benefits, salaries, appointments, transfers, and removals (among other things). This tangle, of course, also changes over time. 
+
+So to get started, I did what students of Chinese politics and history are taught to do: I consulted the official records. 
+
+## The Sources
+
+For the study of policy and government change, these are normally held in  things like yearbooks (年鉴), gazetteers (志), gazettes (公报), collections of official documents (文选), and other reference volumes (概览/通览/etc).^[If you're curious and new to the study of Chinese politics, I have a whole unit on these types of sources, how to find them, and how to use them in my Sources and Methods course. Email me and I'll send it to you.] 
+
+In this case, in my search I stumbled across several "chronicles of significant events" (大事记) from the Central Organization Department Research Office -- one published in 1990, one published in 1993, and a final one published in 1999.^[I suspect there might even be others! But a good source is hard to find, and I haven't been able to track down any from the new millennium. Let me know if you have a copy!] The good folks at the [Central Organization Department](https://en.wikipedia.org/wiki/Organization_Department_of_the_Chinese_Communist_Party) are, of course, just the people we'd like to hear from on the subject of consequential changes to the personnel system, although only for party members. Since it's early and they're famously stingy with documentation, we'll take what we can get. 
+
+Furthermore, as "chronicles," they have a broad temporal view, aren't too in-depth for getting a sense of the broad strokes, and aren't likely any more biased than any other official source might be. 
+
+However, there is one problem with them: they are unbearable to read. As someone who studies bureaucracy, I have a pretty high tolerance for boring. And I've read my share of snore-inducing reference volumes. But something about the disconnected entries really makes these impossible to focus on, and not just because the world is burning. 
+
+## The Entries
+
+The entries are normally short (unless they're punishingly boring summaries of meetings or exhaustive lists of appointed officials), and they're stuffed onto tiny pages of tiny font. 
+
+![Here's an example page.](images/example_page.jpg)
+
+So, while occasionally quite informative, the books as objects are generally a grueling march from cover to cover. Good for bedtime reading but hard to skim unless you already know what you're looking for. 
+
+Being a child of my generation, I thought "wouldn't it be nice to be able to full-text search these, and maybe get a sense of the density of changes or events over time by type of event?" 
+
+::: {.column-margin}
+![I do have some relevant skills.](images/taken_meme.png){width=80%}
+:::
+
+And so, I decided to throw together a digitized [Organization and Personnel Work Chronicle](https://mthompsonbrusstar.com/timeline.html). 
+
+After some comparatively-painless OCR and some manual correction (scanning the books was, as usual, a pain in the neck and back), I was able to put together a segmented version of the three publications (with another, state-focused chronicle thrown in for good measure). 
+
+I then ran the entries through the Google Translate API so that I could use them for teaching (and so folks could search with English keywords). As things stand, the entries sometimes still contain multiple discrete events, and the only classification scheme I'm using is based on what kind of book the entry came from. I'll likely try to address those in future versions if I have time.  
+
+I threw together a (Shiny app version)[https://mthompsonbrusstar.shinyapps.io/zuzhirenshi/] first; although also not perfect, I think this version is still superior to the version I've made available here on the website. In particular, since the page real-estate is not so cramped, I can keep the Chinese and the fact that entries have both start- and end-dates. But I figured it'd be fun to bring it over to the new website, and here we are. 
+
+## Who even is this for? 
+
+My hope is that the explorer will be useful for a few kinds of people. Those people are, in order: 
+
+### Me and people like me (interested in personnel/cadre system reform) 
+
+I mentioned that these information were annoying for me to read and ingest in book form. Now that I've digitized them and made a little interface, I can consume them in smaller temporal chunks, on a bigger screen, and search for relevant entries if I want to. That's worth all the work by itself, frankly. 
+
+It's much easier to filter for entries that mention "meetings" or that just mention the "civil service system" and read thematically rather than chronologically. Hopefully others interested in this subject find this useful also. 
+
+### People interested in the Org. Department
+
+It turns out the Central Organization Department isn't in the habit of making much information about how it works (or when it does anything) public very often. So finding these sources may be something of a gem for people who just want to know what was up in the COD during this period. I've found several references to meetings that I didn't know happened already, and I'm just getting started. 
+
+As a result, I hope that putting these entries up will help clarify some of the timing and events that took place in China's 1980s and 1990s (at least as represented in official chronicles). 
+
+### People interested in Central Appointments 
+
+Finally, a big chunk of the entries are just appointments of various people to various positions. This is by design: it's one of the most important parts of organization work. 
+
+In the study of Chinese politics, there's something of a cottage-industry studying these appointments. However, getting the timing of jobs starting and finishing, especially higher up in the government, is not always easy. Data from people's CVs and so on might contain errors, or contradict one another. These chronicles contain a lot of notes about the appointment of senior figures to various positions, as well as some officials being removed from office for a variety of reasons. 
+
+I hope that these entries might be another useful arrow in the quiver of people interested in these topics. 
+
+## Wrapping up
+
+As I work through some of my project backlog this summer, I'm excited to get some little posts up about what I'm working with, and what I find. I don't want to over-promise so I'm being vague, but I'm hoping to (at the very least) do a little deep-dive on media coverage of the the civil service system over time, what the changing contents of these chronicles might tell us about priorities in organization work, and more. 
+
