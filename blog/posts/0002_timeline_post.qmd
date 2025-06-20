@@ -1,6 +1,6 @@
 ---
 title: "A Chronicle of Chinese Organization and Personnel Work"
-subtitle: "a tool for me, and maybe ... you?"
+description: "a tool for me, and maybe ... you?"
 format:
     html: 
       self-contained: true
