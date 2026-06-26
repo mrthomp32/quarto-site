@@ -1,6 +1,7 @@
 ---
-title: "Chinese Personnel and Organization Work Timeline"
-subtitle: "组织人事工作大事记"
+title: "Civil Service System Pilot Program Chronicle"
+subtitle: "国家公务员制度试点工作大事记"
+search: false
 format:
   html:
     toc: false
@@ -8,11 +9,9 @@ format:
 
 ## What this is
 
-Below, you will find an interactive explorer for personnel and organization work in the Chinese Reform Era (1978–1997). In total, there are about 2,700 organization work entries and 170 personnel work entries. Naturally, there's some overlap between these entries, but they are not the same, and even when they note the same event, the events are glossed differently.
+Below is an interactive explorer for the chronicle of significant events in China's civil service system pilot program, covering 1986–1992. The entries are drawn from *国家公务员制度试点辑要*, a reference volume documenting the policy discussions, legislative drafts, pilot implementations, and institutional decisions that led to the 1993 Interim Regulations on Civil Servants.
 
-I compiled these entries from three sources I collected, scanned, OCR'd, and manually corrected: first, three timelines of significant events from the Research Office of the Central Organization Department — one covering 1978–1988, another covering 1989–1992, and a third covering 1993–1997. These cover not just relevant meetings, speeches, the release of relevant reports, and some statistics, but also the appointments and removals of significant figures. To these, I also added a less-exhaustive set of "personnel work" events from Xu and Sun's 2009 book, "Reform of China's Personnel Institutions, 1978–2008" (for the overlapping years).^[中共中央组织部研究室《党的组织工作大事记》(1978-1988,1989-1992,1993-1997); 徐颂陶 & 孙建立,《中国人事制度改革（1978-2008）》.]
-
-As you explore, please note that the format of entries changes over time; while some entries were possible to separate into discrete events, others list *multiple events* that took place on the same day. The Chinese text is the authoritative version, and a richer version with date-range support is available in the [Shiny app](https://mthompsonbrusstar.shinyapps.io/zuzhirenshi/).
+Dates marked with only a month and year (e.g., "Apr 1986") indicate that the source records the month but not the specific day. Where a date range is recorded, both start and end dates appear in the entry header.
 
 ---
 
@@ -25,25 +24,33 @@ As you explore, please note that the format of entries changes over time; while 
 library(tidyverse)
 library(jsonlite)
 
-data <- read_csv("组织人事工作大事记1978-1997.csv") |>
+raw <- read_tsv("国家公务员制度试点工作大事记_with_english.tsv",
+                col_types = cols(.default = "c"))
+
+data <- raw |>
   mutate(
-    category = case_when(
-      type == "人事工作" ~ "Personnel Work",
-      type == "组织工作" ~ "Org. Work",
-      .default = NA_character_
+    date_clean   = str_replace_all(Date, "XX", "01"),
+    date         = suppressWarnings(as.Date(date_clean)),
+    year         = if_else(!is.na(date), as.integer(year(date)), NA_integer_),
+    date_fmt     = case_when(
+      str_detect(Date, "\\d{4}-\\d{2}-XX") ~ format(date, "%b %Y"),
+      str_detect(Date, "\\d{4}-XX")        ~ format(date, "%Y"),
+      !is.na(date)                         ~ format(date, "%b %d, %Y"),
+      TRUE                                 ~ "Unknown date"
     ),
-    date    = as.Date(start_date),
-    year    = if_else(!is.na(date), as.integer(year(date)), NA_integer_),
-    date_fmt = if_else(!is.na(date), format(date, "%b %d, %Y"), "Unknown date")
+    date_range_fmt = if_else(
+      !is.na(Date_Range) & Date_Range != "",
+      format(as.Date(Date_Range), "%b %d, %Y"),
+      NA_character_
+    )
   ) |>
-  filter(!is.na(category)) |>
   arrange(date) |>
   transmute(
-    category,
-    year     = replace_na(year, 0L),
+    year         = replace_na(year, 0L),
     date_fmt,
-    zh       = events,
-    en       = translated_text
+    date_range_fmt = replace_na(date_range_fmt, ""),
+    zh           = Text,
+    en           = English
   )
 
 json <- toJSON(data, dataframe = "rows", auto_unbox = TRUE, na = "null")
@@ -85,8 +92,8 @@ cat(paste0('<script>const TIMELINE_DATA = ', json, ';</script>\n'))
   font-family: inherit;
 }
 #tl-search:focus {
-  border-color: #1d4ed8;
-  box-shadow: 0 0 0 3px rgba(29,78,216,0.12);
+  border-color: #0d9488;
+  box-shadow: 0 0 0 3px rgba(13,148,136,0.12);
 }
 
 .lang-toggle {
@@ -109,127 +116,16 @@ cat(paste0('<script>const TIMELINE_DATA = ', json, ';</script>\n'))
 }
 .lang-btn + .lang-btn { border-left: 1px solid #d1d5db; }
 .lang-btn.active {
-  background: #1d4ed8;
+  background: #0d9488;
   color: #fff;
 }
 .lang-btn:hover:not(.active) { background: #f3f4f6; color: #374151; }
-
-.cat-label {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  user-select: none;
-  margin: 0;
-  font-weight: normal;
-}
-.cat-label input[type="checkbox"] { display: none; }
-
-.cat-pill {
-  padding: 3px 11px;
-  border-radius: 99px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  opacity: 0.38;
-  transition: opacity 0.2s;
-  cursor: pointer;
-  border: 1.5px solid transparent;
-}
-.cat-label input:checked + .cat-pill { opacity: 1; }
-.pill-org       { background: #dbeafe; color: #1e40af; border-color: #1e40af; }
-.pill-personnel { background: #fef3c7; color: #92400e; border-color: #b45309; }
 
 #tl-count {
   margin-left: auto;
   font-size: 0.78rem;
   color: #9ca3af;
   white-space: nowrap;
-}
-
-/* ── Timeline entries ─────────────────────────────────────────── */
-.year-section   { margin-bottom: 2.5rem; }
-
-.year-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-.year-header::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: #e5e7eb;
-}
-.year-label {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #111827;
-  letter-spacing: -0.02em;
-  line-height: 1;
-}
-
-.timeline-entry {
-  border-left: 4px solid transparent;
-  padding: 11px 14px 11px 14px;
-  margin-bottom: 8px;
-  border-radius: 0 5px 5px 0;
-  background: #f9fafb;
-  opacity: 0;
-  transform: translateY(10px);
-  transition:
-    opacity   0.32s ease-out,
-    transform 0.32s ease-out,
-    background 0.15s ease;
-}
-.timeline-entry.visible { opacity: 1; transform: translateY(0); }
-
-.cat-org        { border-color: #1d4ed8; }
-.cat-org:hover  { background: #eff6ff; }
-.cat-personnel  { border-color: #b45309; }
-.cat-personnel:hover { background: #fffbeb; }
-
-.entry-meta {
-  display: flex;
-  align-items: baseline;
-  gap: 0.6rem;
-  margin-bottom: 0.3rem;
-  flex-wrap: wrap;
-}
-.entry-date {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #374151;
-  letter-spacing: 0.01em;
-}
-.entry-tag {
-  font-size: 0.68rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 1px 6px;
-  border-radius: 3px;
-}
-.tag-org        { background: #dbeafe; color: #1e40af; }
-.tag-personnel  { background: #fef3c7; color: #92400e; }
-
-.entry-text {
-  font-size: 0.9rem;
-  line-height: 1.65;
-  color: #1f2937;
-  margin: 0;
-}
-.entry-text.zh-text {
-  font-size: 0.95rem;
-  line-height: 1.8;
-}
-
-#tl-empty {
-  text-align: center;
-  color: #9ca3af;
-  padding: 3rem 0;
-  font-size: 0.95rem;
 }
 
 /* ── Date range slider ────────────────────────────────────────── */
@@ -273,7 +169,7 @@ cat(paste0('<script>const TIMELINE_DATA = ', json, ';</script>\n'))
 .range-fill {
   position: absolute;
   height: 4px;
-  background: #1d4ed8;
+  background: #0d9488;
   border-radius: 2px;
   pointer-events: none;
 }
@@ -294,7 +190,7 @@ cat(paste0('<script>const TIMELINE_DATA = ', json, ';</script>\n'))
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #1d4ed8;
+  background: #0d9488;
   border: 2px solid #fff;
   box-shadow: 0 1px 3px rgba(0,0,0,0.25);
   pointer-events: all;
@@ -304,22 +200,95 @@ cat(paste0('<script>const TIMELINE_DATA = ', json, ';</script>\n'))
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #1d4ed8;
+  background: #0d9488;
   border: 2px solid #fff;
   box-shadow: 0 1px 3px rgba(0,0,0,0.25);
   pointer-events: all;
   cursor: pointer;
-  border: 2px solid #fff;
 }
 .range-slider input[type="range"]:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 3px rgba(29,78,216,0.2);
+  box-shadow: 0 0 0 3px rgba(13,148,136,0.2);
 }
 
+/* ── Timeline entries ─────────────────────────────────────────── */
+.year-section   { margin-bottom: 2.5rem; }
+
+.year-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.year-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+.year-label {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.timeline-entry {
+  border-left: 4px solid #0d9488;
+  padding: 11px 14px;
+  margin-bottom: 8px;
+  border-radius: 0 5px 5px 0;
+  background: #f9fafb;
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity   0.32s ease-out,
+    transform 0.32s ease-out,
+    background 0.15s ease;
+}
+.timeline-entry.visible { opacity: 1; transform: translateY(0); }
+.timeline-entry:hover   { background: #f0fdfa; }
+
+.entry-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-bottom: 0.3rem;
+  flex-wrap: wrap;
+}
+.entry-date {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #374151;
+  letter-spacing: 0.01em;
+}
+.entry-date-range {
+  font-size: 0.78rem;
+  color: #6b7280;
+}
+
+.entry-text {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #1f2937;
+  margin: 0;
+}
+.entry-text.zh-text {
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
 .entry-text mark {
-  background: #fef08a;
+  background: #99f6e4;
   color: inherit;
   border-radius: 2px;
   padding: 0 1px;
+}
+
+#tl-empty {
+  text-align: center;
+  color: #9ca3af;
+  padding: 3rem 0;
+  font-size: 0.95rem;
 }
 </style>
 
@@ -330,28 +299,18 @@ cat(paste0('<script>const TIMELINE_DATA = ', json, ';</script>\n'))
       <button class="lang-btn active" data-lang="en">English</button>
       <button class="lang-btn" data-lang="zh">中文</button>
     </div>
-  </div>
-  <div class="tl-row">
-    <label class="cat-label">
-      <input type="checkbox" class="cat-check" value="Org. Work" checked>
-      <span class="cat-pill pill-org">Org. Work</span>
-    </label>
-    <label class="cat-label">
-      <input type="checkbox" class="cat-check" value="Personnel Work" checked>
-      <span class="cat-pill pill-personnel">Personnel Work</span>
-    </label>
     <span id="tl-count"></span>
   </div>
   <div class="tl-row range-row">
     <span class="range-row-label">Date range</span>
-    <span class="range-year-val" id="range-min-val">1978</span>
+    <span class="range-year-val" id="range-min-val">1986</span>
     <div class="range-slider">
       <div class="range-track"></div>
       <div class="range-fill" id="range-fill"></div>
-      <input type="range" id="range-min" min="1978" max="1997" value="1978" step="1">
-      <input type="range" id="range-max" min="1978" max="1997" value="1997" step="1">
+      <input type="range" id="range-min" min="1986" max="1992" value="1986" step="1">
+      <input type="range" id="range-max" min="1986" max="1992" value="1992" step="1">
     </div>
-    <span class="range-year-val" id="range-max-val">1997</span>
+    <span class="range-year-val" id="range-max-val">1992</span>
   </div>
 </div>
 
@@ -361,7 +320,6 @@ cat(paste0('<script>const TIMELINE_DATA = ', json, ';</script>\n'))
 (function () {
   'use strict';
 
-  // Position sticky bar below the Quarto site navbar
   function setControlsTop() {
     var nav = document.getElementById('quarto-header') ||
               document.querySelector('nav.navbar') ||
@@ -374,12 +332,11 @@ cat(paste0('<script>const TIMELINE_DATA = ', json, ';</script>\n'))
 
   // ── State ────────────────────────────────────────────────────
   var lang        = 'en';
-  var activeCats  = new Set(['Org. Work', 'Personnel Work']);
   var query       = '';
   var searchTimer = null;
   var revealObs   = null;
-  var YEAR_MIN    = 1978;
-  var YEAR_MAX    = 1997;
+  var YEAR_MIN    = 1986;
+  var YEAR_MAX    = 1992;
   var yearMin     = YEAR_MIN;
   var yearMax     = YEAR_MAX;
 
@@ -387,7 +344,6 @@ cat(paste0('<script>const TIMELINE_DATA = ', json, ';</script>\n'))
   function getFiltered() {
     var q = query.toLowerCase();
     return TIMELINE_DATA.filter(function (d) {
-      if (!activeCats.has(d.category)) return false;
       if (d.year < yearMin || d.year > yearMax) return false;
       if (!q) return true;
       var text = (lang === 'en' ? d.en : d.zh) || '';
@@ -411,11 +367,9 @@ cat(paste0('<script>const TIMELINE_DATA = ', json, ';</script>\n'))
   function escapeHTML(str) {
     return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
-
   function escapeRegex(str) {
     return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
-
   function highlightedHTML(text, q) {
     if (!q) return escapeHTML(text);
     var re = new RegExp(escapeRegex(q), 'gi');
@@ -432,21 +386,22 @@ cat(paste0('<script>const TIMELINE_DATA = ', json, ';</script>\n'))
 
   // ── Build entry HTML ─────────────────────────────────────────
   function entryHTML(item) {
-    var text     = (lang === 'en' ? item.en : item.zh) || '—';
-    var catCls   = item.category === 'Org. Work' ? 'cat-org' : 'cat-personnel';
-    var tagCls   = item.category === 'Org. Work' ? 'tag-org' : 'tag-personnel';
-    var textCls  = lang === 'zh' ? 'entry-text zh-text' : 'entry-text';
-    var escaped  = highlightedHTML(text, query);
-    return '<div class="timeline-entry ' + catCls + '">' +
+    var text    = (lang === 'en' ? item.en : item.zh) || '—';
+    var textCls = lang === 'zh' ? 'entry-text zh-text' : 'entry-text';
+    var escaped = highlightedHTML(text, query);
+    var rangePart = item.date_range_fmt
+      ? ' <span class="entry-date-range">→ ' + escapeHTML(item.date_range_fmt) + '</span>'
+      : '';
+    return '<div class="timeline-entry">' +
       '<div class="entry-meta">' +
-        '<span class="entry-date">' + (item.date_fmt || 'Unknown date') + '</span>' +
-        '<span class="entry-tag ' + tagCls + '">' + item.category + '</span>' +
+        '<span class="entry-date">' + escapeHTML(item.date_fmt || 'Unknown date') + '</span>' +
+        rangePart +
       '</div>' +
       '<p class="' + textCls + '">' + escaped + '</p>' +
     '</div>';
   }
 
-  // ── Scroll-reveal via IntersectionObserver ───────────────────
+  // ── Scroll-reveal ────────────────────────────────────────────
   function setupReveal(container) {
     if (revealObs) { revealObs.disconnect(); revealObs = null; }
     revealObs = new IntersectionObserver(function (entries) {
@@ -457,11 +412,9 @@ cat(paste0('<script>const TIMELINE_DATA = ', json, ';</script>\n'))
         }
       });
     }, { threshold: 0.04, rootMargin: '0px 0px -20px 0px' });
-
-    var items = container.querySelectorAll('.timeline-entry');
-    for (var i = 0; i < items.length; i++) {
-      revealObs.observe(items[i]);
-    }
+    container.querySelectorAll('.timeline-entry').forEach(function (el) {
+      revealObs.observe(el);
+    });
   }
 
   // ── Render ───────────────────────────────────────────────────
@@ -469,10 +422,9 @@ cat(paste0('<script>const TIMELINE_DATA = ', json, ';</script>\n'))
     var filtered  = getFiltered();
     var container = document.getElementById('tl-timeline');
     var countEl   = document.getElementById('tl-count');
-    var total     = TIMELINE_DATA.length;
 
     countEl.textContent = filtered.length.toLocaleString() + ' of ' +
-                          total.toLocaleString() + ' entries';
+                          TIMELINE_DATA.length.toLocaleString() + ' entries';
 
     if (filtered.length === 0) {
       container.innerHTML = '<div id="tl-empty">No entries match your filters.</div>';
@@ -480,7 +432,7 @@ cat(paste0('<script>const TIMELINE_DATA = ', json, ';</script>\n'))
     }
 
     var groups = groupByYear(filtered);
-    var html   = '';
+    var html = '';
     for (var g = 0; g < groups.length; g++) {
       var yr    = groups[g][0];
       var items = groups[g][1];
@@ -488,54 +440,35 @@ cat(paste0('<script>const TIMELINE_DATA = ', json, ';</script>\n'))
       html += '<div class="year-section">' +
         '<div class="year-header"><span class="year-label">' + label + '</span></div>' +
         '<div class="year-entries">';
-      for (var i = 0; i < items.length; i++) {
-        html += entryHTML(items[i]);
-      }
+      for (var i = 0; i < items.length; i++) { html += entryHTML(items[i]); }
       html += '</div></div>';
     }
     container.innerHTML = html;
     setupReveal(container);
   }
 
-  // ── Wire up controls ─────────────────────────────────────────
+  // ── Init ─────────────────────────────────────────────────────
   function init() {
-    // Language buttons
     document.querySelectorAll('.lang-btn').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        document.querySelectorAll('.lang-btn').forEach(function (b) {
-          b.classList.remove('active');
-        });
+        document.querySelectorAll('.lang-btn').forEach(function (b) { b.classList.remove('active'); });
         btn.classList.add('active');
         lang = btn.dataset.lang;
         render();
       });
     });
 
-    // Category checkboxes
-    document.querySelectorAll('.cat-check').forEach(function (cb) {
-      cb.addEventListener('change', function () {
-        if (cb.checked) activeCats.add(cb.value);
-        else activeCats.delete(cb.value);
-        render();
-      });
-    });
-
-    // Search (debounced 200 ms)
     document.getElementById('tl-search').addEventListener('input', function (e) {
       clearTimeout(searchTimer);
       var val = e.target.value;
-      searchTimer = setTimeout(function () {
-        query = val;
-        render();
-      }, 200);
+      searchTimer = setTimeout(function () { query = val; render(); }, 200);
     });
 
-    // Date range slider
-    var sliderMin  = document.getElementById('range-min');
-    var sliderMax  = document.getElementById('range-max');
-    var fillEl     = document.getElementById('range-fill');
-    var minValEl   = document.getElementById('range-min-val');
-    var maxValEl   = document.getElementById('range-max-val');
+    var sliderMin = document.getElementById('range-min');
+    var sliderMax = document.getElementById('range-max');
+    var fillEl    = document.getElementById('range-fill');
+    var minValEl  = document.getElementById('range-min-val');
+    var maxValEl  = document.getElementById('range-max-val');
 
     function updateSlider() {
       var pct1 = (yearMin - YEAR_MIN) / (YEAR_MAX - YEAR_MIN) * 100;
@@ -552,7 +485,6 @@ cat(paste0('<script>const TIMELINE_DATA = ', json, ';</script>\n'))
       updateSlider();
       render();
     });
-
     sliderMax.addEventListener('input', function () {
       yearMax = Math.max(parseInt(this.value), yearMin);
       this.value = yearMax;
