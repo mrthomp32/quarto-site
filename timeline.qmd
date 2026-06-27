@@ -12,7 +12,7 @@ Below, you will find an interactive explorer for personnel and organization work
 
 I compiled these entries from three sources I collected, scanned, OCR'd, and manually corrected: first, three timelines of significant events from the Research Office of the Central Organization Department — one covering 1978–1988, another covering 1989–1992, and a third covering 1993–1997. These cover not just relevant meetings, speeches, the release of relevant reports, and some statistics, but also the appointments and removals of significant figures. To these, I also added a less-exhaustive set of "personnel work" events from Xu and Sun's 2009 book, "Reform of China's Personnel Institutions, 1978–2008" (for the overlapping years).^[中共中央组织部研究室《党的组织工作大事记》(1978-1988,1989-1992,1993-1997); 徐颂陶 & 孙建立,《中国人事制度改革（1978-2008）》.]
 
-As you explore, please note that the format of entries changes over time; while some entries were possible to separate into discrete events, others list *multiple events* that took place on the same day. The Chinese text is the authoritative version, and a richer version with date-range support is available in the [Shiny app](https://mthompsonbrusstar.shinyapps.io/zuzhirenshi/).
+As you explore, please note that the format of entries changes over time; while some entries were possible to separate into discrete events, others list *multiple events* that took place on the same day. The Chinese text is the authoritative version. These data are provided for reference only; I make no guarantees as to their completeness or accuracy.
 
 ---
 
@@ -25,11 +25,12 @@ As you explore, please note that the format of entries changes over time; while 
 library(tidyverse)
 library(jsonlite)
 
-data <- read_csv("组织人事工作大事记1978-1997.csv") |>
+data <- read_csv("组织人事工作大事记1978-1997_split.csv") |>
   mutate(
     category = case_when(
       type == "人事工作" ~ "Personnel Work",
       type == "组织工作" ~ "Org. Work",
+      type == "任免"     ~ "Appointments & Removals",
       .default = NA_character_
     ),
     date    = as.Date(start_date),
@@ -139,6 +140,7 @@ cat(paste0('<script>const TIMELINE_DATA = ', json, ';</script>\n'))
 .cat-label input:checked + .cat-pill { opacity: 1; }
 .pill-org       { background: #dbeafe; color: #1e40af; border-color: #1e40af; }
 .pill-personnel { background: #fef3c7; color: #92400e; border-color: #b45309; }
+.pill-appt      { background: #dcfce7; color: #166534; border-color: #16a34a; }
 
 #tl-count {
   margin-left: auto;
@@ -189,6 +191,8 @@ cat(paste0('<script>const TIMELINE_DATA = ', json, ';</script>\n'))
 .cat-org:hover  { background: #eff6ff; }
 .cat-personnel  { border-color: #b45309; }
 .cat-personnel:hover { background: #fffbeb; }
+.cat-appt       { border-color: #16a34a; }
+.cat-appt:hover { background: #f0fdf4; }
 
 .entry-meta {
   display: flex;
@@ -213,6 +217,7 @@ cat(paste0('<script>const TIMELINE_DATA = ', json, ';</script>\n'))
 }
 .tag-org        { background: #dbeafe; color: #1e40af; }
 .tag-personnel  { background: #fef3c7; color: #92400e; }
+.tag-appt       { background: #dcfce7; color: #166534; }
 
 .entry-text {
   font-size: 0.9rem;
@@ -340,6 +345,10 @@ cat(paste0('<script>const TIMELINE_DATA = ', json, ';</script>\n'))
       <input type="checkbox" class="cat-check" value="Personnel Work" checked>
       <span class="cat-pill pill-personnel">Personnel Work</span>
     </label>
+    <label class="cat-label">
+      <input type="checkbox" class="cat-check" value="Appointments & Removals" checked>
+      <span class="cat-pill pill-appt">Appointments &amp; Removals</span>
+    </label>
     <span id="tl-count"></span>
   </div>
   <div class="tl-row range-row">
@@ -374,7 +383,7 @@ cat(paste0('<script>const TIMELINE_DATA = ', json, ';</script>\n'))
 
   // ── State ────────────────────────────────────────────────────
   var lang        = 'en';
-  var activeCats  = new Set(['Org. Work', 'Personnel Work']);
+  var activeCats  = new Set(['Org. Work', 'Personnel Work', 'Appointments & Removals']);
   var query       = '';
   var searchTimer = null;
   var revealObs   = null;
@@ -433,8 +442,12 @@ cat(paste0('<script>const TIMELINE_DATA = ', json, ';</script>\n'))
   // ── Build entry HTML ─────────────────────────────────────────
   function entryHTML(item) {
     var text     = (lang === 'en' ? item.en : item.zh) || '—';
-    var catCls   = item.category === 'Org. Work' ? 'cat-org' : 'cat-personnel';
-    var tagCls   = item.category === 'Org. Work' ? 'tag-org' : 'tag-personnel';
+    var catCls   = item.category === 'Org. Work'               ? 'cat-org'
+                 : item.category === 'Appointments & Removals' ? 'cat-appt'
+                 : 'cat-personnel';
+    var tagCls   = item.category === 'Org. Work'               ? 'tag-org'
+                 : item.category === 'Appointments & Removals' ? 'tag-appt'
+                 : 'tag-personnel';
     var textCls  = lang === 'zh' ? 'entry-text zh-text' : 'entry-text';
     var escaped  = highlightedHTML(text, query);
     return '<div class="timeline-entry ' + catCls + '">' +
