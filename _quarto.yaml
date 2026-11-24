@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - "cartoons/**"
 
 website:
   title: "Michael Thompson-Brusstar"
@@ -16,6 +18,8 @@ website:
         text: Blog
       - href: timeline.qmd
         text: Org. Work Viewer
+      - href: cartoons/index.html
+        text: Cartoons
   
 metadata-files:
   - blog/_metadata.yml
